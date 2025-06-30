@@ -1,5 +1,5 @@
-Django==1.11.29
-django-crispy-forms==1.7.2
-django-model-utils==3.1.1
-Pillow==8.1.1
-pytz==2018.3
+Django==4.2.13
+django-crispy-forms==2.1
+crispy-bootstrap4==2022.1
+django-model-utils==4.3.1
+Pillow==10.3.0

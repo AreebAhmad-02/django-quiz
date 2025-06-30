@@ -1,117 +1,100 @@
-# Let's Quiz
+# Django Quiz
 
-### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
+This is an online quiz website project, developed using Python and the Django web framework. The front-end is styled with Bootstrap 4.
 
-This is an online quiz organizing website project, developed using Python's web framework Django.<br>
-For front-end designing I have used Twitter's front-end library Bootstrap4.
+## Features
 
-[![GitHub release](https://img.shields.io/github/release/akashgiricse/lets-quiz.svg)](https://img.shields.io/bower/vpre/bootstrap.svg)
-[![GitHub issues](https://img.shields.io/github/issues/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/issues)
-[![GitHub forks](https://img.shields.io/github/forks/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/network)
-[![GitHub stars](https://img.shields.io/github/stars/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/stargazers)
-[![GitHub license](https://img.shields.io/github/license/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/blob/master/LICENSE)
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-
-## Current Features
-
-### Site access features:
+### Site Access:
 
 - User must be logged in to access the Quiz.
-- For signup user is required to give _username_, _first name_, _last name_, _e-mail address_ and _password_.
-- For login the user will be required to enter _username_ and _password_ only.
+- For signup, a user provides a username, first name, last name, e-mail address, and password.
+- For login, the user provides a username and password.
 
-### Features of the quiz:
+### Quiz Features:
 
-- All questions are multiple choice question.
-- Each question is displayed only once per user.
-- Questions are displayed randomly for every user.
-- If the user by-mistake presses refresh or go back to the previous page, there will be a new question for the user and the
-  question he/she was on will be marked as attempted.
-- A message will be displayed after every attempted question whether the answer was correct or incorrect.
+- All questions are multiple choice.
+- Questions are displayed randomly and only once per user.
+- If the user navigates away from a question, it is marked as attempted.
+- Instant feedback is provided after each question.
 
-### Leaderboard features:
+### Leaderboard:
 
-- Leaderboard is a shorted list according to the score obtained by the users.
-- If two users are having same score, the user who has signed up earlier will have good ranking than the one who joined late.
-- Leaderboard is open to all. No login required.
+- The leaderboard ranks users by their total score.
+- In case of a tie, the user who signed up earlier is ranked higher.
+- The leaderboard is publicly accessible without login.
 
-### Administrative features:
+### Admin Features:
 
-- Only admin can add questions.
-- Admin can add questions and modify them until they are not marked as _Has been published?_
-- Once a question has been published, it can neither be modified nor can be accessed. Admin can only see a list of questions.
-- Admin can search questions by question text or choice text.
-- Admin can filter questions based on whether the questions have been published or not.
+- Only administrators can add and modify questions.
+- Once a question is published, it cannot be modified.
+- Admins can search and filter questions.
 
-## Getting started with development
+## Getting Started With Development
 
-Dependencies:
+Follow these instructions to set up a local development environment.
 
-- Python 3.6.x
-- Django 1.11.x
-- Ubuntu 17.04 or later or Linux Mint 18.2 or later
+### Dependencies:
 
-### 1. Clone this repository
+- Python 3.10 or newer
+- Django 4.2 or newer
 
-```bash
-git clone https://github.com/akashgiricse/lets-quiz.git
-cd lets_quiz
-```
+### Setup Steps:
 
-### 2. Install [Pipenv](https://pipenv.pypa.io/en/latest/)
+1.  **Clone the repository:**
+    Replace `your-username` with your actual GitHub username.
 
-### 3. Create the virtualenv
+    ```bash
+    git clone https://github.com/your-username/django-quiz.git
+    cd django-quiz
+    ```
 
-```bash
-## run following command from `lets_quiz` directory
-pipenv shell
-```
+2.  **Create and activate a virtual environment:**
 
-### 4. Install python packages
+    ```powershell
+    # On Windows
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    # On macOS/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
 
-### 5. Setup the database
+3.  **Install the required packages:**
 
-_TODO - Add instructions for this when I start using MySQL database._
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-### 6. Run database migrations
+4.  **Navigate to the project directory:**
+    The `manage.py` script is located in the `django_quiz` sub-directory.
 
-```bash
-cd lets_quiz
-python manage.py migrate
-```
+    ```bash
+    cd django_quiz
+    ```
 
-### 7. Create superuser
+5.  **Run database migrations:**
+    This command sets up your local database schema.
 
-```bash
-python manage.py createsuperuser
-```
+    ```bash
+    python manage.py migrate
+    ```
 
-### 8. Run development server
+6.  **Create a superuser:**
+    This account will have admin privileges. Follow the prompts to set a username and password.
 
-```bash
-python manage.py runserver
-```
+    ```bash
+    python manage.py createsuperuser
+    ```
 
-## Contribute
-
-- Issue Tracker: [Issues](https://github.com/akashgiricse/lets-quiz/issues)
-- Source Code: [Download zip: Release v1.0.1](https://github.com/akashgiricse/lets-quiz/archive/1.0.1.zip)
-
-## Contributors
-
-- [Akash Giri](https://github.com/akashgiricse)
-
-## Support
-
-- If you are having issues, please let me know.<gr>
-  I have a mailing list located at: contact@akashgiri.com
+7.  **Run the development server:**
+    ```bash
+    python manage.py runserver
+    ```
+    Your local copy of the site will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 ## License
 
-MIT License
-
-Copyright (c) 2022 Akash Giri.
+This project is licensed under the MIT License. See the `LICENSE` file for details.

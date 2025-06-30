@@ -31,17 +31,20 @@ def leaderboard(request):
 
 @login_required()
 def play(request):
-    quiz_profile, created = QuizProfile.objects.get_or_create(user=request.user)
+    quiz_profile, created = QuizProfile.objects.get_or_create(
+        user=request.user)
 
     if request.method == 'POST':
         question_pk = request.POST.get('question_pk')
 
-        attempted_question = quiz_profile.attempts.select_related('question').get(question__pk=question_pk)
+        attempted_question = quiz_profile.attempts.select_related(
+            'question').get(question__pk=question_pk)
 
         choice_pk = request.POST.get('choice_pk')
 
         try:
-            selected_choice = attempted_question.question.choices.get(pk=choice_pk)
+            selected_choice = attempted_question.question.choices.get(
+                pk=choice_pk)
         except ObjectDoesNotExist:
             raise Http404
 
@@ -63,7 +66,8 @@ def play(request):
 
 @login_required()
 def submission_result(request, attempted_question_pk):
-    attempted_question = get_object_or_404(AttemptedQuestion, pk=attempted_question_pk)
+    attempted_question = get_object_or_404(
+        AttemptedQuestion, pk=attempted_question_pk)
     context = {
         'attempted_question': attempted_question,
     }
@@ -102,11 +106,11 @@ def logout_view(request):
     return redirect('/')
 
 
-def error_404(request):
+def error_404(request, exception):
     data = {}
     return render(request, 'quiz/error_404.html', data)
 
 
-def error_500(request):
+def error_500(request, *args, **argv):
     data = {}
     return render(request, 'quiz/error_500.html', data)
