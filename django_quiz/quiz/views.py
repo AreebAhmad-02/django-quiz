@@ -83,7 +83,7 @@ def login_view(request):
         password = form.cleaned_data.get("password")
         user = authenticate(username=username, password=password)
         login(request, user)
-        return redirect('/user-home')
+        return redirect('quiz:user_home')
     return render(request, 'quiz/login.html', {"form": form, "title": title})
 
 
@@ -93,7 +93,7 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/login')
+            return redirect('quiz:login')
     else:
         form = RegistrationForm()
 
@@ -103,7 +103,7 @@ def register(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('/')
+    return redirect('quiz:home')
 
 
 def error_404(request, exception):
