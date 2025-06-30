@@ -1,6 +1,10 @@
 # Django Quiz
 
+**Deployed At:** [https://areeb02.pythonanywhere.com/](https://areeb02.pythonanywhere.com/)
+
 This is an online quiz website project, developed using Python and the Django web framework. The front-end is styled with Bootstrap 4.
+
+The project is live and accessible at the link above.
 
 ## Features
 
